@@ -26,8 +26,8 @@ if gettext.locale.getlocale()[0].startswith('zh'):
     msg_is_directory = '忽略文件夹： %s 。'
 
     msg_argument_description = "思维导图文档转换器，项目地址： https://github.com/fkxxyz/mmconv"
-    msg_arg_src = '源文件。'
-    msg_arg_dest = '目标文件。如果未指定目标文件，则打印源文件类型。'
+    msg_arg_src = '源文件。表示要转换的文件。'
+    msg_arg_dest = '目标文件名。转换成功的保存的文件路径。如果未指定目标文件，则直接打印源文件类型。'
     msg_arg_type = '指定目标文件的类型。目前支持以下类型：'
 
 else:
@@ -41,8 +41,8 @@ else:
     msg_is_directory = 'Is directory: %s .'
 
     msg_argument_description = "Mind map document converter. Project address https://github.com/fkxxyz/mmconv"
-    msg_arg_src = 'source file.'
-    msg_arg_dest = 'destination file. If no destination file is specified, the source file type is printed.'
+    msg_arg_src = 'source file. The file to be converted.'
+    msg_arg_dest = 'destination file. Path of the saved file that was successfully converted. If no destination file is specified, the source file type is printed.'
     msg_arg_type = 'specify the type of destination file. Support for these document types: '
 
 
@@ -571,8 +571,8 @@ class mindmapDocument:
             读出来的数据保存到 m_data 中
             返回值是读取是否成功，格式不正确则返回 False
             m_data 的格式是
-                m_data = [["根节点内容", 是否收缩起来, [子节点1, 子节点2, ...]]]
-                子节点的格式是 ["节点内容", 是否收缩起来, [子节点1, 子节点2, ...]]
+                m_data = [["根节点内容", 是否折叠起来, [子节点1, 子节点2, ...]]]
+                子节点的格式是 ["节点内容", 是否折叠起来, [子节点1, 子节点2, ...]]
         '''
         assert False
         
