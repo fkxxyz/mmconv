@@ -86,5 +86,19 @@ mmconv.py 源文件 [目标文件] [-t 格式]
 
 源文件的格式不用指定，会自己识别，详见 --help
 
+### 用法示例
 
+```shell
+# 将 a.xmind 转换成 txt 格式
+mmconv.py a.xmind a.txt
+
+# 将 a.xmind 转换成 mmap 格式
+mmconv.py -t mmap a.xmind a.mmap
+
+# 将 a.txt 转换成 xmind 格式
+mmconv.py -t xmind a.txt a.xmind
+
+# 将 a.xmind 转换成 xmind-zen 格式
+mmconv.py -t zen a.xmind b.xmind
+```
 
