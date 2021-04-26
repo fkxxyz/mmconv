@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/env python3
 
 import os
 import gettext
@@ -13,37 +13,19 @@ import json
 import uuid
 import xml.dom.minidom
 
+msg_not_a_valid_file = 'Not a valid %s file. '
+msg_has_no = 'Has no %s . '
+msg_error_format_in = 'Error format in %s . '
+msg_document = 'document'
+msg_write_failed_file = 'Write failed: %s .'
+msg_load_failed_file = 'Load failed: %s .'
+msg_no_such_file = 'No such file: %s .'
+msg_is_directory = 'Is directory: %s .'
 
-# 为了方便单文件便携，在这里支持中文和英文
-if gettext.locale.getlocale()[0].startswith('zh'):
-    msg_not_a_valid_file = '不是一个有效的 %s 文件。'
-    msg_has_no = '缺少 %s 。'
-    msg_error_format_in = '错误的格式： %s 。'
-    msg_document = '文档'
-    msg_write_failed_file = '写入失败： %s 。'
-    msg_load_failed_file = '读取失败： %s 。'
-    msg_no_such_file = '没有这样的文件： %s 。'
-    msg_is_directory = '忽略文件夹： %s 。'
-
-    msg_argument_description = "思维导图文档转换器，项目地址： https://github.com/fkxxyz/mmconv"
-    msg_arg_src = '源文件。表示要转换的文件。'
-    msg_arg_dest = '目标文件名。转换成功的保存的文件路径。如果未指定目标文件，则直接打印源文件类型。'
-    msg_arg_type = '指定目标文件的类型。目前支持以下类型：'
-
-else:
-    msg_not_a_valid_file = 'Not a valid %s file. '
-    msg_has_no = 'Has no %s . '
-    msg_error_format_in = 'Error format in %s . '
-    msg_document = 'document'
-    msg_write_failed_file = 'Write failed: %s .'
-    msg_load_failed_file = 'Load failed: %s .'
-    msg_no_such_file = 'No such file: %s .'
-    msg_is_directory = 'Is directory: %s .'
-
-    msg_argument_description = "Mind map document converter. Project address https://github.com/fkxxyz/mmconv"
-    msg_arg_src = 'source file. The file to be converted.'
-    msg_arg_dest = 'destination file. Path of the saved file that was successfully converted. If no destination file is specified, the source file type is printed.'
-    msg_arg_type = 'specify the type of destination file. Support for these document types: '
+msg_argument_description = "Mind map document converter. Project address https://github.com/fkxxyz/mmconv"
+msg_arg_src = 'source file. The file to be converted.'
+msg_arg_dest = 'destination file. Path of the saved file that was successfully converted. If no destination file is specified, the source file type is printed.'
+msg_arg_type = 'specify the type of destination file. Support for these document types: '
 
 
 def mindjet_Document_xml_head_func(generateMapID):
